@@ -1,7 +1,9 @@
 import { classNames } from "../../utils";
 import { navigation } from "../../static";
+import { Link, useLocation } from "wouter-preact";
 
 const DesktopSidebar = () => {
+  const [loc] = useLocation();
   return (
     <div className='hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0'>
       {/* Sidebar component, swap this element with another sidebar if you like */}
@@ -16,11 +18,11 @@ const DesktopSidebar = () => {
           </div>
           <nav className='mt-5 flex-1 px-2 space-y-1'>
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className={classNames(
-                  item.current
+                  item.href === loc
                     ? "bg-gray-900 text-white"
                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                   "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -28,7 +30,7 @@ const DesktopSidebar = () => {
               >
                 <item.icon
                   className={classNames(
-                    item.current
+                    item.href === loc
                       ? "text-gray-300"
                       : "text-gray-400 group-hover:text-gray-300",
                     "mr-3 flex-shrink-0 h-6 w-6"
@@ -36,7 +38,7 @@ const DesktopSidebar = () => {
                   aria-hidden='true'
                 />
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>

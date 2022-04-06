@@ -1,17 +1,30 @@
-import {
-  CalendarIcon,
-  ChartBarIcon,
-  FolderIcon,
-  HomeIcon,
-  InboxIcon,
-  UsersIcon,
-} from "@heroicons/react/outline";
+import { ChartBarIcon, HomeIcon } from "@heroicons/react/outline";
 
 export const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: InboxIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartBarIcon, current: false },
+  { name: "Dashboard", href: "/", icon: HomeIcon },
+  { name: "Reports", href: "/reports", icon: ChartBarIcon },
+];
+
+export const stats = [
+  {
+    name: "Total Subscribers",
+    stat: "71,897",
+    previousStat: "70,946",
+    change: "12%",
+    changeType: "increase",
+  },
+  {
+    name: "Avg. Open Rate",
+    stat: "58.16%",
+    previousStat: "56.14%",
+    change: "2.02%",
+    changeType: "increase",
+  },
+  {
+    name: "Avg. Click Rate",
+    stat: "24.57%",
+    previousStat: "28.62%",
+    change: "4.05%",
+    changeType: "decrease",
+  },
 ];
