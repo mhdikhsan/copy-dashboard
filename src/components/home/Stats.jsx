@@ -1,20 +1,21 @@
-import { useGraphData } from "../../hooks";
+// import { useGraphData } from "../../hooks";
 import { useMemo } from "preact/hooks";
 import { stats } from "../../static";
 
 export default function Stats() {
-  const { items } = useGraphData();
+  // const { items } = useGraphData();
+  const items = useMemo(() => ([]), []);
   const { sum, avg, high } = useMemo(() => {
     let sum = 0;
     let avg = 0;
     let high = 0;
-    if (items?.length) {
-      items.forEach((item) => {
-        sum += +item.count.unique_id;
-        high = high > +item.count.unique_id ? high : +item.count.unique_id;
-      });
-      avg = sum / items.length;
-    }
+    // if (items?.length) {
+    //   items.forEach((item) => {
+    //     sum += +item.count.unique_id;
+    //     high = high > +item.count.unique_id ? high : +item.count.unique_id;
+    //   });
+    //   avg = sum / items.length;
+    // }
     return { sum, avg, high };
   }, [items]);
 
@@ -24,8 +25,8 @@ export default function Stats() {
         <div key={item.name} className='px-4 py-5 sm:p-6'>
           <dt className='text-base font-normal text-gray-900'>{item.name}</dt>
           <dd className='mt-1 flex justify-between items-baseline md:block lg:flex'>
-            <div className='flex items-baseline text-2xl font-semibold text-gray-600'>
-              {item.name === "Total Event"
+            <div className='flex items-baseline text-2xl font-semibold text-indigo-600'>
+              {item.name === "Total Usage"
                 ? sum
                 : item.name === "Average Daily"
                 ? avg

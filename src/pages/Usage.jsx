@@ -1,5 +1,5 @@
 import Filter from "../components/home/Filter";
-// import Stats from "../components/home/Stats";
+import Stats from "../components/home/Stats";
 // import Graph from "../components/home/Graph";
 
 const Usage = () => {
@@ -9,8 +9,8 @@ const Usage = () => {
         <h1 className='text-2xl font-semibold text-gray-900'>Usage Metric</h1>
       </header>
       <Filter />
-      {/* <Stats />
-      <Graph /> */}
+      <Stats />
+      {/* <Graph /> */}
     </div>
   );
 };

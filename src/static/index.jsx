@@ -137,7 +137,7 @@ export const accidentStatus = [
 
 export const stats = [
   {
-    name: "Total Event",
+    name: "Total Usage",
   },
   {
     name: "Average Daily",
