@@ -2,8 +2,8 @@ import { useState } from "preact/hooks";
 import DesktopSidebar from "./components/layout/DesktopSidebar";
 import MobileSidebar from "./components/layout/MobileSidebar";
 import MobileHeader from "./components/layout/MobileHeader";
-import Dashboard from "./pages/Dashboard";
-import Reports from "./pages/Reports";
+import Usage from "./pages/Usage";
+import Key from "./pages/Key";
 import { Route, Switch } from "wouter-preact";
 
 export function App() {
@@ -17,11 +17,11 @@ export function App() {
         <MobileHeader {...{ sidebarOpen, setSidebarOpen }} />
         <main className='flex-1'>
           <Switch>
-            <Route path='/reports'>
-              <Reports />
+            <Route path='/key'>
+              <Key />
             </Route>
             <Route path='/'>
-              <Dashboard />
+              <Usage />
             </Route>
           </Switch>
         </main>

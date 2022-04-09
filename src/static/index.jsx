@@ -1,8 +1,8 @@
-import { ChartBarIcon, HomeIcon } from "@heroicons/react/outline";
+import { KeyIcon, PresentationChartLineIcon } from "@heroicons/react/outline";
 
 export const navigation = [
-  { name: "Dashboard", href: "/", icon: HomeIcon },
-  { name: "Reports", href: "/reports", icon: ChartBarIcon },
+  { name: "Usage", href: "/", icon: PresentationChartLineIcon },
+  { name: "Key", href: "/key", icon: KeyIcon },
 ];
 
 export const stats = [
