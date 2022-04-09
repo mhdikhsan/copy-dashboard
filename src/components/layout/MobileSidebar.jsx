@@ -98,7 +98,7 @@ const MobileSidebar = ({ sidebarOpen, setSidebarOpen }) => {
                     />
                   </div>
                   <div className='ml-3'>
-                    <p className='text-base font-medium text-white'>Tom Cook</p>
+                    <p className='text-base font-medium text-white'>Agung Dewandaru</p>
                     <p className='text-sm font-medium text-gray-400 group-hover:text-gray-300'>
                       View profile
                     </p>

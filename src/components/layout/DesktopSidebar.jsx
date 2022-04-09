@@ -53,7 +53,7 @@ const DesktopSidebar = () => {
                 />
               </div>
               <div className='ml-3'>
-                <p className='text-sm font-medium text-white'>Tom Cook</p>
+                <p className='text-sm font-medium text-white'>Agung Dewandaru</p>
                 <p className='text-xs font-medium text-gray-300 group-hover:text-gray-200'>
                   View profile
                 </p>

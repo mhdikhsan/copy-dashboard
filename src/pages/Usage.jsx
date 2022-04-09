@@ -1,6 +1,6 @@
 import Filter from "../components/home/Filter";
 import Stats from "../components/home/Stats";
-// import Graph from "../components/home/Graph";
+import Graph from "../components/home/Graph";
 
 const Usage = () => {
   return (
@@ -10,7 +10,7 @@ const Usage = () => {
       </header>
       <Filter />
       <Stats />
-      {/* <Graph /> */}
+      <Graph />
     </div>
   );
 };

@@ -11,7 +11,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { useGraphData } from "../../hooks";
+// import { useGraphData } from "../../hooks";
 import { subDays, differenceInDays, compareAsc } from "date-fns";
 import { useGraphFilter } from "../../hooks/useGraphFilter";
 Chart.register(
@@ -28,7 +28,7 @@ Chart.register(
 const Graph = () => {
   const elRef = useRef();
   const chartRef = useRef();
-  const { items } = useGraphData();
+  // const { items } = useGraphData();
   const fromDate = useGraphFilter((state) => state.fromDate);
   const toDate = useGraphFilter((state) => state.toDate);
 
@@ -49,8 +49,8 @@ const Graph = () => {
       datasets: [
         {
           label: "All Event",
-          backgroundColor: "rgb(255, 99, 132)",
-          borderColor: "rgb(245, 89, 122)",
+          backgroundColor: "rgb(99, 80, 239)",
+          borderColor: "rgb(79, 70, 229)",
           data: labels.map((el) => ({ x: el, y: 0 })),
           spanGaps: false,
         },
@@ -99,22 +99,22 @@ const Graph = () => {
     chart.update();
   }, [fromDate, toDate]);
 
-  useEffect(() => {
-    if (items?.length) {
-      const data = items.map(
-        ({ count, created_at_day, created_at_month, created_at_year }) => ({
-          x: new Date(
-            `${created_at_year}-${created_at_month}-${created_at_day}`
-          ).setHours(0, 0, 0, 0),
-          y: +count.unique_id,
-        })
-      );
-      data.sort((a, b) => compareAsc(a.x, b.x));
-      const chart = chartRef.current;
-      chart.data.datasets[0].data = data;
-      chart.update();
-    }
-  }, [items]);
+  // useEffect(() => {
+  //   if (items?.length) {
+  //     const data = items.map(
+  //       ({ count, created_at_day, created_at_month, created_at_year }) => ({
+  //         x: new Date(
+  //           `${created_at_year}-${created_at_month}-${created_at_day}`
+  //         ).setHours(0, 0, 0, 0),
+  //         y: +count.unique_id,
+  //       })
+  //     );
+  //     data.sort((a, b) => compareAsc(a.x, b.x));
+  //     const chart = chartRef.current;
+  //     chart.data.datasets[0].data = data;
+  //     chart.update();
+  //   }
+  // }, [items]);
 
   return (
     <div className='bg-white w-full max-h-min rounded-lg p-3 sm:p-6 shadow'>
