@@ -4,9 +4,14 @@ specifiers:
   '@headlessui/react': ^1.5.0
   '@heroicons/react': ^1.0.6
   '@preact/preset-vite': ^2.1.5
+  '@tailwindcss/forms': ^0.5.0
   autoprefixer: ^10.4.4
+  chart.js: ^3.7.1
+  chartjs-adapter-date-fns: ^2.0.0
+  date-fns: ^2.28.0
   postcss: ^8.4.12
   preact: ^10.5.15
+  swr: ^1.2.2
   tailwindcss: ^3.0.23
   vite: ^2.9.0
   wouter-preact: ^2.8.0-alpha.2
@@ -14,13 +19,18 @@ specifiers:
 
 dependencies:
   '@headlessui/react': 1.5.0
+  chart.js: 3.7.1
+  chartjs-adapter-date-fns: 2.0.0_chart.js@3.7.1
+  date-fns: 2.28.0
   preact: 10.7.0
+  swr: 1.2.2
   wouter-preact: 2.8.0-alpha.2_preact@10.7.0
   zustand: 3.7.1
 
 devDependencies:
   '@heroicons/react': 1.0.6
   '@preact/preset-vite': 2.2.0_preact@10.7.0+vite@2.9.1
+  '@tailwindcss/forms': 0.5.0_tailwindcss@3.0.23
   autoprefixer: 10.4.4_postcss@8.4.12
   postcss: 8.4.12
   tailwindcss: 3.0.23_autoprefixer@10.4.4
@@ -385,6 +395,15 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /@tailwindcss/forms/0.5.0_tailwindcss@3.0.23:
+    resolution: {integrity: sha512-KzWugryEBFkmoaYcBE18rs6gthWCFHHO7cAZm2/hv3hwD67AzwP7udSCa22E7R1+CEJL/FfhYsJWrc0b1aeSzw==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.0.23_autoprefixer@10.4.4
+    dev: true
+
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
@@ -511,6 +530,18 @@ packages:
       supports-color: 7.2.0
     dev: true
 
+  /chart.js/3.7.1:
+    resolution: {integrity: sha512-8knRegQLFnPQAheZV8MjxIXc5gQEfDFD897BJgv/klO/vtIyFFmgMXrNfgrXpbTr/XbTturxRgxIXx/Y+ASJBA==}
+    dev: false
+
+  /chartjs-adapter-date-fns/2.0.0_chart.js@3.7.1:
+    resolution: {integrity: sha512-rmZINGLe+9IiiEB0kb57vH3UugAtYw33anRiw5kS2Tu87agpetDDoouquycWc9pRsKtQo5j+vLsYHyr8etAvFw==}
+    peerDependencies:
+      chart.js: ^3.0.0
+    dependencies:
+      chart.js: 3.7.1
+    dev: false
+
   /chokidar/3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
     engines: {node: '>= 8.10.0'}
@@ -569,6 +600,11 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
     dev: true
+
+  /date-fns/2.28.0:
+    resolution: {integrity: sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==}
+    engines: {node: '>=0.11'}
+    dev: false
 
   /debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -1005,6 +1041,11 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /mini-svg-data-uri/1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
+    dev: true
+
   /minimist/1.2.6:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
@@ -1221,6 +1262,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /swr/1.2.2:
+    resolution: {integrity: sha512-ky0BskS/V47GpW8d6RU7CPsr6J8cr7mQD6+do5eky3bM0IyJaoi3vO8UhvrzJaObuTlGhPl2szodeB2dUd76Xw==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
+    dev: false
 
   /tailwindcss/3.0.23_autoprefixer@10.4.4:
     resolution: {integrity: sha512-+OZOV9ubyQ6oI2BXEhzw4HrqvgcARY38xv3zKcjnWtMIZstEsXdI9xftd1iB7+RbOnj2HOEzkA0OyB5BaSxPQA==}
