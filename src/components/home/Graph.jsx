@@ -48,7 +48,7 @@ const Graph = () => {
       labels: labels,
       datasets: [
         {
-          label: "All Event",
+          label: "All Usage",
           backgroundColor: "rgb(99, 80, 239)",
           borderColor: "rgb(79, 70, 229)",
           data: labels.map((el) => ({ x: el, y: 0 })),

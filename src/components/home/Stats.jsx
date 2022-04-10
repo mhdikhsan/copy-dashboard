@@ -32,7 +32,7 @@ export default function Stats() {
                 ? avg
                 : high}
               <span className='ml-2 text-sm font-medium text-gray-500'>
-                event(s)
+                call(s)
               </span>
             </div>
           </dd>
