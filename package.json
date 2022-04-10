@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "aws s3 sync dist s3://copy.mikoding.com --profile mikoding"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
