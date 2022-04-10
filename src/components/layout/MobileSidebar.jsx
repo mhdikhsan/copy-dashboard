@@ -3,8 +3,11 @@ import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import { classNames } from "../../utils";
 import { navigation } from "../../static";
+import { Link, useLocation } from "wouter-preact";
 
 const MobileSidebar = ({ sidebarOpen, setSidebarOpen }) => {
+  const [loc] = useLocation();
+
   return (
     <Transition.Root show={sidebarOpen} as={Fragment}>
       <Dialog
@@ -63,19 +66,20 @@ const MobileSidebar = ({ sidebarOpen, setSidebarOpen }) => {
               </div>
               <nav className='mt-5 px-2 space-y-1'>
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className={classNames(
-                      item.current
+                      item.href === loc
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white",
                       "group flex items-center px-2 py-2 text-base font-medium rounded-md"
                     )}
+                    onClick={() => setSidebarOpen(false)}
                   >
                     <item.icon
                       className={classNames(
-                        item.current
+                        item.href === loc
                           ? "text-gray-300"
                           : "text-gray-400 group-hover:text-gray-300",
                         "mr-4 flex-shrink-0 h-6 w-6"
@@ -83,7 +87,7 @@ const MobileSidebar = ({ sidebarOpen, setSidebarOpen }) => {
                       aria-hidden='true'
                     />
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </div>
@@ -98,7 +102,9 @@ const MobileSidebar = ({ sidebarOpen, setSidebarOpen }) => {
                     />
                   </div>
                   <div className='ml-3'>
-                    <p className='text-base font-medium text-white'>Agung Dewandaru</p>
+                    <p className='text-base font-medium text-white'>
+                      Agung Dewandaru
+                    </p>
                     <p className='text-sm font-medium text-gray-400 group-hover:text-gray-300'>
                       View profile
                     </p>
