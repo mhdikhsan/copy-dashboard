@@ -1,9 +1,11 @@
 import { classNames } from "../../utils";
 import { navigation } from "../../static";
 import { Link, useLocation } from "wouter-preact";
+import { useAuth } from "../../hooks";
 
 const DesktopSidebar = () => {
   const [loc] = useLocation();
+  const logout = useAuth((state) => state.logout);
   return (
     <div className='hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0'>
       {/* Sidebar component, swap this element with another sidebar if you like */}
@@ -11,8 +13,8 @@ const DesktopSidebar = () => {
         <div className='flex-1 flex flex-col pt-5 pb-4 overflow-y-auto'>
           <div className='flex items-center flex-shrink-0 px-4'>
             <img
-              className='h-8 w-auto'
-              src='https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg'
+              className='h-8 w-auto invert'
+              src='https://geodashboard.braga.co.id/images/ic-logo-horizontal.svg'
               alt='Workflow'
             />
           </div>
@@ -48,15 +50,20 @@ const DesktopSidebar = () => {
               <div>
                 <img
                   className='inline-block h-9 w-9 rounded-full'
-                  src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+                  src='https://images.unsplash.com/photo-1519764622345-23439dd774f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZHNvbWV8ZW58MHx8MHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
                   alt=''
                 />
               </div>
               <div className='ml-3'>
-                <p className='text-sm font-medium text-white'>Agung Dewandaru</p>
-                <p className='text-xs font-medium text-gray-300 group-hover:text-gray-200'>
-                  View profile
+                <p className='text-sm font-medium text-white'>
+                  agung@gmail.com
                 </p>
+                <button
+                  onClick={logout}
+                  className='text-xs font-medium text-gray-300 group-hover:text-gray-200'
+                >
+                  Logout
+                </button>
               </div>
             </div>
           </a>

@@ -6,6 +6,7 @@ import Snackbar from "./components/layout/Snackbar";
 import Usage from "./pages/Usage";
 import Key from "./pages/Key";
 import { Route, Switch } from "wouter-preact";
+import LoginForm from "./components/auth/LoginForm";
 
 export function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -28,6 +29,7 @@ export function App() {
         </main>
       </div>
       <Snackbar />
+      <LoginForm />
     </>
   );
 }

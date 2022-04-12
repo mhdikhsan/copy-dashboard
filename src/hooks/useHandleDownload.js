@@ -1,9 +1,9 @@
-import { useAuth } from "./useAuth";
-import { directusUrl } from "../static";
+// import { useAuth } from "./useAuth";
+// import { directusUrl } from "../static";
 import { useSnack } from "./useSnack";
 
 export const useHandleDownload = () => {
-  const token = useAuth((state) => state.token);
+  // const token = useAuth((state) => state.token);
   const setSnackContent = useSnack((state) => state.setSnackContent);
 
   const handleDownload = async (event) => {
@@ -20,11 +20,11 @@ export const useHandleDownload = () => {
     //       "&export=csv"
     //   );
     // } catch (error) {
-    //   setSnackContent([
-    //     "error",
-    //     "An Error Occured",
-    //     "Oops, something went wrong",
-    //   ]);
+    setSnackContent([
+      "error",
+      "An Error Occured",
+      "Oops, something went wrong",
+    ]);
     // }
   };
 

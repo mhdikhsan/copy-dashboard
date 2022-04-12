@@ -7,7 +7,7 @@ const fetcher = (query) =>
     .then((res) => res.json())
     .then((res) => res.data);
 
-export function useReporters() {
+export function useUsers() {
   const token = useAuth((state) => state.token);
   const { data, error } = useSWR(
     directusUrl + "/users" + `?access_token=${token}`,
