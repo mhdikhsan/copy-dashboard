@@ -47,13 +47,8 @@ export default function LoginForm() {
               className='relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6'
               onSubmit={loginSubmit}
             >
-              <div>
-                <img
-                  className='h-8 w-auto mx-auto'
-                  src='https://geodashboard.braga.co.id/images/ic-logo-horizontal.svg'
-                  alt='Braga Technplogies'
-                />
-
+              <div className='mt-5 sm:mt-6'>
+                GPT 3 DASHBOARD
                 <div className='mt-3 text-center sm:mt-5 flex flex-col space-y-3'>
                   <Input type='email' />
                   <Input type='password' />

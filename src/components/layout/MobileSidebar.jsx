@@ -58,11 +58,7 @@ const MobileSidebar = ({ sidebarOpen, setSidebarOpen }) => {
             </Transition.Child>
             <div className='flex-1 h-0 pt-5 pb-4 overflow-y-auto'>
               <div className='flex-shrink-0 flex items-center px-4'>
-                <img
-                  className='h-8 w-auto invert'
-                  src='https://geodashboard.braga.co.id/images/ic-logo-horizontal.svg'
-                  alt='Workflow'
-                />
+                <span className="text-gray-300 hover:bg-gray-700 hover:text-white">GPT 3 DASHBOARD</span>
               </div>
               <nav className='mt-5 px-2 space-y-1'>
                 {navigation.map((item) => (
