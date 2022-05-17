@@ -67,28 +67,7 @@ const Filter = () => {
             </div>
           </div>
 
-          <div className='col-span-6 sm:col-span-2'>
-            <label
-              htmlFor='reporter'
-              className='block text-sm font-medium text-gray-700'
-            >
-              User
-            </label>
-            <div className='mt-1'>
-              <select
-                id='reporter'
-                name='reporter'
-                className='shadow-sm focus:ring-indigo-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
-              >
-                <option value=''>all</option>
-                {reporters?.map(({ id, email }) => (
-                  <option key={id} value={id}>
-                    {email}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
+          
 
           <div className='col-span-6 sm:col-span-2 flex items-end space-x-2'>
             <button
@@ -100,16 +79,6 @@ const Filter = () => {
                 aria-hidden='true'
               />
               Apply
-            </button>
-            <button
-              type='reset'
-              className='flex-grow inline-flex justify-center items-center py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-            >
-              <DownloadIcon
-                className='mr-3 flex-shrink-0 h-6 w-6 text-white'
-                aria-hidden='true'
-              />
-              Download
             </button>
           </div>
         </div>

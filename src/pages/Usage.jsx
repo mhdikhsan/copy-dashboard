@@ -10,7 +10,6 @@ const Usage = () => {
       </header>
       <Filter />
       <Stats />
-      <Graph />
     </div>
   );
 };

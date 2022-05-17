@@ -5,10 +5,13 @@ import { stats } from "../../static";
 export default function Stats() {
   // const { items } = useGraphData();
   const items = useMemo(() => ([]), []);
-  const { sum, avg, high } = useMemo(() => {
+  const { sum, avg, high , avgmonth, highmonth, today } = useMemo(() => {
     let sum = 0;
     let avg = 0;
     let high = 0;
+    let avgmonth = 0;
+    let highmonth = 0;
+    let today = 0;
     // if (items?.length) {
     //   items.forEach((item) => {
     //     sum += +item.count.unique_id;
@@ -16,7 +19,7 @@ export default function Stats() {
     //   });
     //   avg = sum / items.length;
     // }
-    return { sum, avg, high };
+    return { sum, avg, high , avgmonth, highmonth, today };
   }, [items]);
 
   return (
@@ -30,7 +33,14 @@ export default function Stats() {
                 ? sum
                 : item.name === "Average Daily"
                 ? avg
-                : high}
+                : item.name === "Usage Today"
+                ? today
+                : item.name === "Average Monthly"
+                ? avgmonth
+                : item.name === "Highest Daily"
+                ? high
+                : highmonth
+                }
               <span className='ml-2 text-sm font-medium text-gray-500'>
                 call(s)
               </span>

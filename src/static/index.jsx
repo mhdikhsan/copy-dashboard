@@ -144,4 +144,13 @@ export const stats = [
   {
     name: "Highest Daily",
   },
+  {
+    name: "Usage Today",
+  },
+  {
+    name: "Average Monthly",
+  },
+  {
+    name: "Highest Monthly",
+  },
 ];
