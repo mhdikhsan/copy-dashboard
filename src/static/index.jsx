@@ -4,7 +4,6 @@ import { CalendarIcon, ExclamationCircleIcon } from "@heroicons/react/solid";
 
 export const navigation = [
   { name: "Usage", href: "/", icon: PresentationChartLineIcon },
-  { name: "Key", href: "/key", icon: KeyIcon },
 ];
 
 export const severityOptions = [
