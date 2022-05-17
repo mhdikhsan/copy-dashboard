@@ -6,6 +6,14 @@ export default function Stats() {
   // const { items } = useGraphData();
   const items = useMemo(() => ([]), []);
   const { sum, avg, high , avgmonth, highmonth, today } = useMemo(() => {
+    let res = await fetch("https://gpt-3-api.herokuapp.com/site-traffic", {
+      method: "POST",
+      body: JSON.stringify({
+        descriptor,
+      }),
+      headers: { "Content-Type": "application/json", Authorization: key },
+    });
+    res = await res.json();
     let sum = 0;
     let avg = 0;
     let high = 0;
