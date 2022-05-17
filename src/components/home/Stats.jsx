@@ -9,17 +9,17 @@ export default function Stats() {
     let res = await fetch("https://gpt-3-api.herokuapp.com/site-traffic", {
       method: "POST",
       body: JSON.stringify({
-        descriptor,
+        dateFrom, daTeto
       }),
       headers: { "Content-Type": "application/json", Authorization: key },
     });
     res = await res.json();
-    let sum = 0;
-    let avg = 0;
-    let high = 0;
-    let avgmonth = 0;
-    let highmonth = 0;
-    let today = 0;
+    let sum = res.length;
+    let avg = res.length;
+    let high = res.length;
+    let avgmonth = res.length;
+    let highmonth = res.length;
+    let today = res.length;
     // if (items?.length) {
     //   items.forEach((item) => {
     //     sum += +item.count.unique_id;

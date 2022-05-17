@@ -118,7 +118,9 @@ const Graph = () => {
 
   return (
     <div className='bg-white w-full max-h-min rounded-lg p-3 sm:p-6 shadow'>
-      <canvas ref={elRef}></canvas>
+      <canvas ref={elRef}>
+        
+      </canvas>
     </div>
   );
 };
