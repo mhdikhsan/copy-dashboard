@@ -4,8 +4,8 @@ import { stats } from "../../static";
 
 export default function Stats() {
   // const { items } = useGraphData();
-  const items = useMemo(() => ([]), []);
-  const { sum, avg, high , avgmonth, highmonth, today } = useMemo(() => {
+  const items = useMemo(async () => ([]), []);
+  const { sum, avg, high , avgmonth, highmonth, today } = useMemo(async () => {
     let res = await fetch("https://gpt-3-api.herokuapp.com/site-traffic", {
       method: "POST",
       body: JSON.stringify({
